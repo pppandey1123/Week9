@@ -24,6 +24,10 @@ db.on('error', (err) => {
 const bookRouter = require('./routes/book_router');
 app.use('/book', bookRouter);
 
+app.get('/', (req, res) => {
+  res.send('Welcome  Use /book to access book routes.');
+});
+
 app.listen(PORT, () =>
   console.log(`Server started on http://127.0.0.1:${PORT}`)
 );
